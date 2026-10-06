@@ -1,379 +1,925 @@
 <!DOCTYPE html>
-<html lang="te">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="hosting-provider" content="Netlify">
-    <meta name="netlify-deploy" content="https://netlify.new/?utm_campaign=ai-legible&amp;utm_source=meta&amp;utm_medium=referral&amp;utm_id=42c48234-5191-4957-8dd9-9e76be5f5fb0">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LEARN WITH MUNAAF</title>
+<meta charset="UTF-8">
+<!-- This site is hosted on Netlify. Anyone can build and deploy a site
+     like this one for free: https://netlify.new/?utm_campaign=loops&utm_source=ai-legible&utm_medium=owned&utm_content=comment&utm_id=c9c73704-147a-4f00-a928-478e7f7a2012
+     Netlify hosting facts for this site: static/SSR served via Netlify Edge. -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Meta Pixel Code (UPDATED) -->
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '2189389334956437');
-    fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=2189389334956437&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Meta Pixel Code -->
+<title>Pankaj Bhardwaj | Market Insights</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
-        }
+<style>
 
-        body {
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            color: #fff;
-            overflow-x: hidden;
-            background-color: #040814;
-        }
+/* =========================
+   RESET
+========================= */
 
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><g fill="%23f59e0b" fill-opacity="0.05"><path d="M100 0 A 100 100 0 1 0 100 200 A 100 100 0 1 0 100 0 Z M 100 20 A 80 80 0 1 1 100 180 A 80 80 0 1 1 100 20 Z"/><circle cx="100" cy="100" r="10"/><path d="M100 50 L110 90 L100 100 L90 90 Z" /></g></svg>');
-            background-size: 150px 150px;
-            background-repeat: repeat;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        .wrapper {
-            width: 100%;
-            max-width: 460px;
-            text-align: center;
-        }
+html{
+    scroll-behavior:smooth;
+}
 
-        .card {
-            position: relative;
-            overflow: hidden;
-            padding: 40px 30px;
-            border-radius: 20px;
-            background: rgba(10, 15, 30, 0.85);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 2px solid #f59e0b;
-            box-shadow:
-                0 30px 60px rgba(0, 0, 0, 0.7),
-                0 0 30px rgba(245, 158, 11, 0.1);
-            transition: transform 0.3s ease;
-        }
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#170304;
+    color:#fff;
+}
 
-        .card::before {
-            content: "";
-            position: absolute;
-            width: 250px;
-            height: 250px;
-            background: #f59e0b;
-            border-radius: 50%;
-            filter: blur(120px);
-            opacity: 0.15;
-            top: -100px;
-            left: -100px;
-            z-index: 1;
-        }
 
-        .main-content {
-            position: relative;
-            z-index: 2;
-        }
+/* =========================
+   MAIN PAGE
+========================= */
 
-        .profile {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            background: #040814;
-            border: 4px solid #f59e0b;
-            box-shadow: 0 0 25px rgba(245, 158, 11, 0.4);
-            margin-bottom: 20px;
-        }
+.page{
+    width:100%;
+    min-height:100vh;
+    overflow:hidden;
 
-        .verify {
-            color: #facc15;
-            font-size: 14px;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            margin-bottom: 12px;
-        }
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(255,185,0,.10),
+            transparent 34%
+        ),
+        linear-gradient(
+            180deg,
+            #210506 0%,
+            #170304 100%
+        );
+}
 
-        .verify i {
-            color: #4ade80;
-        }
+.container{
+    width:100%;
+    max-width:620px;
+    margin:0 auto;
 
-        h2 {
-            font-size: 26px;
-            color: #ffffff;
-            font-weight: 900;
-            letter-spacing: 0.5px;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.6);
-            margin-bottom: 20px;
-        }
+    padding:28px 18px 15px;
+}
 
-        .stats {
-            background: rgba(245, 158, 11, 0.08);
-            border-radius: 12px;
-            border: 1px solid rgba(245, 158, 11, 0.2);
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-            padding: 18px;
-            text-align: center;
-            margin-bottom: 18px;
-        }
 
-        .stats-item {
-            color: #e2e8f0;
-            font-size: 13px;
-            font-weight: 600;
-            line-height: 1.4;
-        }
+/* =========================
+   PROFILE
+========================= */
 
-        .stats-item i {
-            font-size: 20px;
-            margin-bottom: 6px;
-            display: block;
-        }
+.profile-wrap{
+    display:flex;
+    justify-content:center;
+    margin-bottom:24px;
+}
 
-        .stats-item .english {
-            display: block;
-            font-weight: 700;
-            color: #fcd34d;
-        }
+.profile{
+    width:145px;
+    height:145px;
 
-        .stats-item .telugu {
-            color: #fff;
-            opacity: 0.9;
-        }
+    padding:4px;
 
-        .description {
-            margin-top: 15px;
-            margin-bottom: 22px;
-            line-height: 1.7;
-            font-size: 15px;
-            color: #cbd5e1;
-        }
+    border-radius:50%;
 
-        .btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            width: 100%;
-            padding: 18px;
-            border-radius: 14px;
-            text-decoration: none;
-            color: #fff;
-            font-size: 16px;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            background: linear-gradient(135deg, #f59e0b, #d97706);
-            box-shadow: 0 10px 30px rgba(245, 158, 11, 0.4);
-            transition: all 0.3s ease;
-        }
+    background:
+        linear-gradient(
+            135deg,
+            #ffd000,
+            #9d6500,
+            #ffd000
+        );
 
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 15px 35px rgba(245, 158, 11, 0.55);
-        }
+    box-shadow:
+        0 0 25px rgba(255,183,0,.18),
+        0 0 60px rgba(255,183,0,.08);
+}
 
-        .benefits {
-            margin-top: 22px;
-            text-align: left;
-        }
+.profile img{
+    width:100%;
+    height:100%;
 
-        .benefits div {
-            padding: 10px 4px;
-            color: #e2e8f0;
-            font-size: 14.5px;
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-        }
+    display:block;
 
-        .benefits div:last-child {
-            border-bottom: none;
-        }
+    object-fit:cover;
 
-        .benefits .english-text {
-            color: #fcd34d;
-            font-weight: 700;
-        }
+    border-radius:50%;
 
-        .timer {
-            margin-top: 22px;
-            color: #94a3b8;
-            font-size: 13px;
-        }
+    border:4px solid #210506;
+}
 
-        .timer span {
-            color: #f59e0b;
-            font-weight: bold;
-        }
 
-        .disclaimer {
-            margin-top: 25px;
-            font-size: 11px;
-            line-height: 1.8;
-            color: #94a3b8;
-            padding: 0 10px;
-        }
+/* =========================
+   NAME
+========================= */
 
-        @media(max-width: 480px) {
-            .card { padding: 30px 20px; }
-            h2 { font-size: 22px; }
-            .profile { width: 100px; height: 100px; }
-            .btn { font-size: 15px; padding: 16px; }
-            .stats { padding: 12px; }
-            .stats-item { font-size: 12px; }
-        }
-    </style>
+.name{
+    text-align:center;
+
+    font-size:32px;
+    line-height:1.2;
+
+    font-weight:800;
+
+    letter-spacing:.3px;
+
+    margin-bottom:20px;
+}
+
+.crown{
+    font-size:24px;
+}
+
+
+/* =========================
+   MARKET
+========================= */
+
+.market{
+    text-align:center;
+
+    color:#ffc400;
+
+    font-family:Georgia,serif;
+
+    font-size:21px;
+
+    font-weight:bold;
+
+    letter-spacing:1px;
+
+    margin-bottom:16px;
+}
+
+
+/* =========================
+   DESCRIPTION
+========================= */
+
+.description{
+    text-align:center;
+
+    color:#eee;
+
+    font-family:Georgia,serif;
+
+    font-size:17px;
+
+    line-height:1.45;
+
+    font-weight:bold;
+
+    margin-bottom:27px;
+}
+
+
+/* =========================
+   TELEGRAM BUTTON
+========================= */
+
+.telegram-btn{
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:11px;
+
+    width:100%;
+    min-height:64px;
+
+    padding:14px 18px;
+
+    border-radius:10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffc400,
+            #efa800
+        );
+
+    color:#fff;
+
+    text-decoration:none;
+
+    font-size:18px;
+
+    font-weight:800;
+
+    letter-spacing:.2px;
+
+    box-shadow:
+        0 7px 24px rgba(255,174,0,.18),
+        inset 0 1px 0 rgba(255,255,255,.28);
+
+    transition:
+        transform .18s ease,
+        box-shadow .18s ease,
+        opacity .18s ease;
+
+    -webkit-tap-highlight-color:transparent;
+
+    user-select:none;
+}
+
+.telegram-btn:hover{
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 10px 30px rgba(255,174,0,.28);
+}
+
+.telegram-btn:active{
+    transform:scale(.985);
+}
+
+.telegram-btn.disabled{
+    opacity:.65;
+    pointer-events:none;
+}
+
+.telegram-icon{
+    width:24px;
+    height:24px;
+
+    flex:0 0 24px;
+
+    fill:#fff;
+}
+
+
+/* =========================
+   FEATURE CARDS
+========================= */
+
+.cards{
+    margin-top:32px;
+
+    display:flex;
+    flex-direction:column;
+
+    gap:15px;
+}
+
+.card{
+    min-height:103px;
+
+    display:flex;
+    align-items:center;
+
+    gap:15px;
+
+    padding:16px 14px;
+
+    border:1px solid rgba(205,137,25,.36);
+
+    border-radius:18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(57,18,17,.72),
+            rgba(29,7,7,.88)
+        );
+
+    box-shadow:
+        0 10px 28px rgba(0,0,0,.18),
+        inset 0 1px 0 rgba(255,255,255,.025);
+}
+
+.card-icon{
+    flex:0 0 64px;
+
+    width:64px;
+    height:64px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:15px;
+
+    border:1px solid rgba(255,181,0,.36);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,186,0,.13),
+            rgba(255,186,0,.02)
+        );
+
+    color:#ffc000;
+
+    font-size:27px;
+
+    box-shadow:
+        inset 0 0 18px rgba(255,177,0,.05);
+}
+
+.card-content{
+    flex:1;
+    min-width:0;
+}
+
+.card-title{
+    color:#fff;
+
+    font-size:19px;
+
+    font-weight:800;
+
+    line-height:1.2;
+
+    margin-bottom:5px;
+}
+
+.card-text{
+    color:#a99a9a;
+
+    font-size:14px;
+
+    line-height:1.35;
+}
+
+.card-check{
+    flex:0 0 34px;
+
+    width:34px;
+    height:34px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    border:1px solid rgba(255,170,0,.38);
+
+    color:#ffb900;
+
+    font-size:16px;
+}
+
+
+/* =========================
+   SECOND BUTTON
+========================= */
+
+.bottom-btn{
+    margin-top:30px;
+}
+
+
+/* =========================
+   DISCLAIMER
+========================= */
+
+.disclaimer{
+    text-align:center;
+
+    color:#806f6f;
+
+    font-size:11px;
+
+    line-height:1.5;
+
+    margin-top:22px;
+
+    padding:0 12px;
+}
+
+
+/* =========================
+   PREMIUM ADSBUILD AGENCY
+========================= */
+
+.agency-footer{
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    margin-top:26px;
+
+    padding:0 4px 10px;
+}
+
+.agency-badge{
+    width:100%;
+
+    max-width:430px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:7px;
+
+    padding:11px 15px;
+
+    border-radius:12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(40,14,14,.96),
+            rgba(58,24,14,.96)
+        );
+
+    border:1px solid rgba(255,193,7,.20);
+
+    box-shadow:
+        0 6px 22px rgba(0,0,0,.25),
+        inset 0 1px 0 rgba(255,255,255,.035);
+
+    color:#b9a9a9;
+
+    font-size:12px;
+
+    line-height:1.4;
+
+    text-align:center;
+}
+
+.agency-fire{
+    width:27px;
+    height:27px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:8px;
+
+    background:rgba(255,193,7,.08);
+
+    border:1px solid rgba(255,193,7,.18);
+
+    font-size:13px;
+
+    flex-shrink:0;
+}
+
+.agency-label{
+    color:#9e9191;
+
+    font-weight:500;
+}
+
+.agency-link{
+    color:#ffc400;
+
+    text-decoration:none;
+
+    font-weight:800;
+
+    letter-spacing:.4px;
+
+    transition:.2s ease;
+}
+
+.agency-link:hover{
+    color:#ffe27a;
+}
+
+.agency-growth{
+    color:#9e9191;
+
+    font-weight:500;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:480px){
+
+    .container{
+        padding:25px 16px 12px;
+    }
+
+    .profile{
+        width:140px;
+        height:140px;
+    }
+
+    .name{
+        font-size:28px;
+    }
+
+    .crown{
+        font-size:22px;
+    }
+
+    .market{
+        font-size:19px;
+    }
+
+    .description{
+        font-size:16px;
+    }
+
+    .telegram-btn{
+        min-height:63px;
+
+        font-size:17px;
+    }
+
+    .card{
+        min-height:100px;
+
+        padding:15px 12px;
+
+        gap:12px;
+    }
+
+    .card-icon{
+        width:60px;
+        height:60px;
+
+        flex-basis:60px;
+
+        font-size:24px;
+    }
+
+    .card-title{
+        font-size:17px;
+    }
+
+    .card-text{
+        font-size:13px;
+    }
+
+    .card-check{
+        width:30px;
+        height:30px;
+
+        flex-basis:30px;
+    }
+
+    .agency-footer{
+        margin-top:23px;
+
+        padding-bottom:7px;
+    }
+
+    .agency-badge{
+        max-width:100%;
+
+        padding:10px 10px;
+
+        gap:5px;
+
+        font-size:10.5px;
+    }
+
+    .agency-fire{
+        width:25px;
+        height:25px;
+
+        font-size:12px;
+    }
+}
+
+</style>
 </head>
+
+
 <body>
 
-<div class="wrapper">
-    <div class="card">
-        <div class="main-content">
-            <img src="https://karanmetalabe.com/wp-content/uploads/2026/08/ChatGPT-Image-Aug-6-2026-10_12_13-PM.png" class="profile" alt="Learn With Munaaf Logo">
+<div class="page">
 
-            <div class="verify">
-                <i class="fas fa-check-circle"></i> తెలుగు విద్యాపరమైన ట్రేడింగ్ కమ్యూనిటీ
-            </div>
+<div class="container">
 
-            <h2>📚 LEARN WITH MUNAAF 📚</h2>
 
-            <div class="stats">
-                <div class="stats-item">
-                    <i class="fas fa-star" style="color:#fcd34d"></i>
-                    <span class="english">START-Friendly</span>
-                    <span class="telugu">అభ్యాసం</span>
-                </div>
-                <div class="stats-item">
-                    <i class="fas fa-users" style="color:#38bdf8"></i>
-                    <span class="english">Active Telugu</span>
-                    <span class="telugu">సమూహం</span>
-                </div>
-                <div class="stats-item">
-                    <i class="fas fa-fire" style="color:#f87171"></i>
-                    <span class="english">Daily</span>
-                    <span class="telugu">జ్ఞాన అప్‌డేట్లు</span>
-                </div>
-            </div>
+    <!-- =========================
+         PROFILE PHOTO
+    ========================== -->
 
-            <p class="description">
-                📚 Stock Market &amp; Financial <span style="color:#cbd5e1">అవగాహన కమ్యూనిటీ</span>.
-            </p>
+    <div class="profile-wrap">
 
-            <a class="btn" id="telegramBtn" href="https://t.me/+uZuOlholgUoxYjQ9" rel="noopener noreferrer">
-                <i class="fab fa-telegram font-awesome-icon"></i>
-                JOIN FREE LEARNING COMMUNITY
-                <i class="fas fa-arrow-right"></i>
-            </a>
+        <div class="profile">
 
-            <div class="benefits">
-                <div><i class="fas fa-chart-line" style="color: #4ade80;"></i> <span class="telugu-text">Daily</span> <span class="english-text">మార్కెట్ అప్‌డేట్లు</span></div>
-                <div><i class="fas fa-book-open" style="color: #f59e0b;"></i> <span class="telugu-text">Free</span> <span class="english-text">లెర్నింగ్ మెటీరియల్</span></div>
-                <div><i class="fas fa-bullseye" style="color: #f87171;"></i> <span class="telugu-text">తెలుగులో ఈజీగా స్టాక్ మార్కెట్</span></div>
-                <div><i class="fas fa-users" style="color: #38bdf8;"></i> <span class="telugu-text">Full తెలుగు కమ్యూనిటీ సపోర్ట్</span></div>
-                <div><i class="fas fa-lightbulb" style="color: #facc15;"></i> <span class="telugu-text">Market అవగాహన మరియు పరిజ్ఞానం</span></div>
-            </div>
+            <img
+                src="https://i.ibb.co/DDx3nSd6/Whats-App-Image-2026-01-30-at-8-54-08-PM.jpg"
+                alt="TRADE WITH GAUTAM"
+                loading="eager"
+            >
 
-            <div class="timer">
-                ⏳ <span id="count">30</span> సెకన్లలో ఆటోమేటిక్‌గా రీడైరెక్ట్ అవుతుంది...
-            </div>
         </div>
+
     </div>
+
+
+    <!-- =========================
+         NAME
+    ========================== -->
+
+    <h1 class="name">
+
+        <span class="crown">👑</span>
+
+        TRADE WITH MUNAAF
+
+        <span class="crown">👑</span>
+
+    </h1>
+
+
+    <!-- =========================
+         MARKET
+    ========================== -->
+
+    <div class="market">
+        NIFTY • BANKNIFTY • SENSEX
+    </div>
+
+
+    <!-- =========================
+         DESCRIPTION
+    ========================== -->
+
+    <div class="description">
+
+        Clear market insights. Timely updates.<br>
+
+        One focused trading community
+
+    </div>
+
+
+    <!-- =========================
+         TELEGRAM BUTTON 1
+    ========================== -->
+
+    <a
+        class="telegram-btn"
+        href="https://t.me/+uZuOlholgUoxYjQ9"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+
+        <svg
+            class="telegram-icon"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+        >
+
+            <path d="M21.9 3.1c.3-1.2-.5-1.7-1.5-1.3L2.2 9.1c-1.2.5-1.2 1.2-.2 1.5l4.6 1.4 1.7 5.3c.2.6.1.9.5.9.3 0 .5-.1.7-.3l2.2-2.1 4.6 3.4c.8.4 1.4.2 1.6-.8L21.9 3.1zM7.4 11.5l10.8-6.8c.5-.3.9-.1.5.2l-9 8.1-.3 3.2-1.5 4.7-1.5-4.7-2.9-.9c-.6-.2-.6-.5.4-.9z"/>
+
+        </svg>
+
+        JOIN TELEGRAM CHANNEL
+
+    </a>
+
+
+    <!-- =========================
+         FEATURE CARDS
+    ========================== -->
+
+    <div class="cards">
+
+
+        <!-- CARD 1 -->
+
+        <div class="card">
+
+            <div class="card-icon">
+                ↗
+            </div>
+
+            <div class="card-content">
+
+                <div class="card-title">
+                    Daily Market Insights
+                </div>
+
+                <div class="card-text">
+                    Actionable market updates shared consistently
+                </div>
+
+            </div>
+
+            <div class="card-check">
+                ✓
+            </div>
+
+        </div>
+
+
+        <!-- CARD 2 -->
+
+        <div class="card">
+
+            <div class="card-icon">
+                ◎
+            </div>
+
+            <div class="card-content">
+
+                <div class="card-title">
+                    Research-Based Analysis
+                </div>
+
+                <div class="card-text">
+                    Key levels and market observations with a clear view
+                </div>
+
+            </div>
+
+            <div class="card-check">
+                ★
+            </div>
+
+        </div>
+
+
+        <!-- CARD 3 -->
+
+        <div class="card">
+
+            <div class="card-icon">
+                ♙
+            </div>
+
+            <div class="card-content">
+
+                <div class="card-title">
+                    Market Experience
+                </div>
+
+                <div class="card-text">
+                    Perspective developed through different market cycles
+                </div>
+
+            </div>
+
+            <div class="card-check">
+                ✓
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- =========================
+         TELEGRAM BUTTON 2
+    ========================== -->
+
+    <div class="bottom-btn">
+
+        <a
+            class="telegram-btn"
+            href="https://t.me/+uZuOlholgUoxYjQ9"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+
+            <svg
+                class="telegram-icon"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+            >
+
+                <path d="M21.9 3.1c.3-1.2-.5-1.7-1.5-1.3L2.2 9.1c-1.2.5-1.2 1.2-.2 1.5l4.6 1.4 1.7 5.3c.2.6.1.9.5.9.3 0 .5-.1.7-.3l2.2-2.1 4.6 3.4c.8.4 1.4.2 1.6-.8L21.9 3.1zM7.4 11.5l10.8-6.8c.5-.3.9-.1.5.2l-9 8.1-.3 3.2-1.5 4.7-1.5-4.7-2.9-.9c-.6-.2-.6-.5.4-.9z"/>
+
+            </svg>
+
+            JOIN TELEGRAM CHANNEL
+
+        </a>
+
+    </div>
+
+
+    <!-- =========================
+         DISCLAIMER
+    ========================== -->
 
     <div class="disclaimer">
-        <strong>నిరాకరణ (Disclaimer):</strong> ఈ ప్లాట్‌ఫారమ్ కేవలం విద్యాపరమైన మరియు సమాచార ప్రయోజనాల కోసం మాత్రమే. మేము ఎటువంటి పెట్టుబడి, ట్రేడింగ్ లేదా ఆర్థిక సలహాలను (financial advice) అందించము. ఏదైనా నిర్ణయం తీసుకునే ముందు మీ స్వంత పరిశోధన చేసుకోండి లేదా మీ ఆర్థిక సలహాదారుని సంప్రదించండి.
+
+        Market information is provided for educational purposes only.
+        Please conduct your own research and consider your risk profile.
+
     </div>
+
+
+    <!-- =========================
+         KARAN AGENCY — updated link
+    ========================== -->
+
+    <div class="agency-footer">
+
+        <div class="agency-badge">
+
+            <span class="agency-fire">
+                🔥
+            </span>
+
+            <span class="agency-label">
+                Ad manage by
+            </span>
+
+            <a
+                class="agency-link"
+                href="https://t.me/+txl1RbesgdE3ODg1"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                KARAN AGENCY
+            </a>
+
+            <span class="agency-growth">
+                • Instant Growth 🚀
+            </span>
+
+        </div>
+
+    </div>
+
+
 </div>
 
+</div>
+
+
+<!-- =========================
+     DOUBLE-CLICK PROTECTION + EVENT TRACKING
+========================= -->
+
 <script>
-    let time = 30;
-    let counter = document.getElementById("count");
-    let tracked = false;          // ensures Lead event fires only once
-    const TELEGRAM_URL = "https://t.me/+uZuOlholgUoxYjQ9";  // NEW CHANNEL LINK
 
-    // ---- Telegram button click tracking ----
-    document.getElementById("telegramBtn").addEventListener("click", function(e) {
-        e.preventDefault();
-        const telegramLink = this.href;
+(function(){
 
-        if (!tracked) {
-            tracked = true;
-            // Standard Lead event
+    const buttons =
+        document.querySelectorAll(".telegram-btn");
+
+    buttons.forEach(function(button){
+
+        let locked = false;
+
+        button.addEventListener("click",function(e){
+
+            // Fire Meta Pixel event on click
             if (typeof fbq === 'function') {
-                fbq('track', 'Lead', {
-                    content_name: 'Telegram Join',
-                    content_category: 'Community',
-                    value: 1.00,
-                    currency: 'INR'
-                });
-                // Custom event for extra clarity
+                fbq('track', 'Lead');
                 fbq('trackCustom', 'TelegramJoinClick');
             }
-        }
 
-        // Small delay to allow pixel to fire before navigation
-        setTimeout(() => {
-            window.location.href = telegramLink;
-        }, 250);
-    });
-
-    // ---- Countdown & auto-redirect tracking ----
-    const countdown = setInterval(() => {
-        time--;
-        if (counter) {
-            counter.innerText = time;
-        }
-
-        if (time <= 0) {
-            clearInterval(countdown);
-
-            // Fire Lead event only if not already tracked (e.g., user didn't click)
-            if (!tracked) {
-                tracked = true;
-                if (typeof fbq === 'function') {
-                    fbq('track', 'Lead', {
-                        content_name: 'Telegram Auto Redirect',
-                        content_category: 'Community',
-                        value: 1.00,
-                        currency: 'INR'
-                    });
-                }
+            if(locked){
+                e.preventDefault();
+                return;
             }
 
-            window.location.href = TELEGRAM_URL;
-        }
-    }, 1000);
+            locked = true;
+
+            button.classList.add("disabled");
+
+            setTimeout(function(){
+
+                locked = false;
+
+                button.classList.remove("disabled");
+
+            },1500);
+
+        });
+
+    });
+
+})();
+
 </script>
+
+<!-- Meta Pixel Code — NEW PIXEL ID -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2189389334956437');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2189389334956437&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 
 </body>
 </html>
+<script async src="/.netlify/scripts/hud?variant=public" data-nf-variant="public" data-netlify-site-id="c9c73704-147a-4f00-a928-478e7f7a2012" data-app-host="app.netlify.com"></script>
